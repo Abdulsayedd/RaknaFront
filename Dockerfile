@@ -7,8 +7,8 @@ WORKDIR /usr/src/app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install --production
+# Install all dependencies, including devDependencies for building
+RUN npm install
 
 # Copy the local code to the container image
 COPY . .
